@@ -1,0 +1,7 @@
+<h1>Minke.XYZ</h1>
+
+<ul>
+	<% @recipe.each do |recipe| %>
+		<li><%= link_to recipe.title, recipe %> </li>
+	<% end %>
+</ul>

@@ -37,6 +37,8 @@ gem 'bulma-rails', '~> 0.9.0'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
 gem 'cocoon', '~> 1.2', '>= 1.2.14'
 
+gem 'jquery-rails', '~> 4.4'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

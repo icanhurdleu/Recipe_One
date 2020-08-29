@@ -1,0 +1,27 @@
+<%= simple_form_for @recipe, html: { multipart: true } do |f| %>
+
+	<div class="field">
+		<div class="control">
+			<%= f.input :title, label: "Recipe Title",
+			 						required: true,
+			 						autofocus: true,
+			 						input_html: { class: "input" }, wrapper: false,
+			 						label_html: { class: "label" } %>
+		</div>
+	</div>
+	<div class="field">
+		<div class="control">
+			<%= f.input :description, label: "Description",
+			 						required: true,
+			 						input_html: { class: "input" }, wrapper: false,
+			 						label_html: { class: "label" } %>
+		</div>
+	</div>
+
+	<div class="field">
+    <div class="control">
+      <%= f.button :submit, "Submit Recipe", class: "button is-info is-medium" %>
+    </div>
+  </div>
+
+<% end %>
