@@ -1,20 +1,40 @@
 <%= simple_form_for @recipe, html: { multipart: true } do |f| %>
 
-	<div class="field">
-		<div class="control">
-			<%= f.input :title, label: "Recipe Title",
-			 						required: true,
-			 						autofocus: true,
-			 						input_html: { class: "input" }, wrapper: false,
-			 						label_html: { class: "label" } %>
+	<div class="columns">
+		<div class="column is-one-third">
+			<div class="field">
+				<div class="control">
+					<%= f.input :title, label: "Recipe Title",
+					 						required: true,
+					 						autofocus: true,
+					 						input_html: { class: "input" }, wrapper: false,
+					 						label_html: { class: "label" } %>
+				</div>
+			</div>
+		</div>
+		<div class="column is-two-thirds">
+			<div class="field">
+				<div class="control">
+					<%= f.input :description, label: "Description",
+					 						required: true,
+					 						input_html: { class: "input" }, wrapper: false,
+					 						label_html: { class: "label" } %>
+				</div>
+			</div>
 		</div>
 	</div>
-	<div class="field">
-		<div class="control">
-			<%= f.input :description, label: "Description",
-			 						required: true,
-			 						input_html: { class: "input" }, wrapper: false,
-			 						label_html: { class: "label" } %>
+
+	<div class="columns">
+		<div class="column is-one-half">
+			<div class="field">
+				<div class="control">
+					<%= f.input :tag_list, label: "Tags [Enter separated by commas]",
+											placeholder: "Snack, Bread, ...",
+					 						required: false,
+					 						input_html: { class: "input" }, wrapper: false,
+					 						label_html: { class: "label" } %>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -22,7 +42,40 @@
 		<div class="column">
 			<div class="field">
 				<div class="control">
-					<h3>Ingredients</h3>
+					<%= f.input :serves, label: "Serves",
+			 						required: false,
+			 						input_html: { class: "input" }, wrapper: false,
+			 						label_html: { class: "label" } %>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div class="field">
+				<div class="control">
+					<%= f.input :prep, label: "Prep Time",
+			 						required: false,
+			 						input_html: { class: "input" }, wrapper: false,
+			 						label_html: { class: "label" } %>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div class="field">
+				<div class="control">
+					<%= f.input :wait, label: "Wait Time",
+			 						required: false,
+			 						input_html: { class: "input" }, wrapper: false,
+			 						label_html: { class: "label" } %>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="columns">
+		<div class="column">
+			<h3>Ingredients</h3>
+			<div class="field">
+				<div class="control">
 					<%= f.simple_fields_for :ingredients do |ingredient| %>
 						<%= render 'ingredient_fields', f: ingredient %>
 					<% end %>
@@ -32,22 +85,23 @@
 		</div>
 
 		<div class="column">
-			<div class="field">
-				<div class="control">
-					<h3>Directions</h3>
-					<%= f.simple_fields_for :directions do |direction| %>
-						<%= render 'direction_fields', f: direction %>
-					<% end %>
-					<%= link_to_add_association "Add Step", f, :directions, class: "button is-info add-button" %>
-				</div>
-			</div>
+			<h3>Directions</h3>
+				<%= f.simple_fields_for :directions do |direction| %>
+					<%= render 'direction_fields', f: direction %>
+				<% end %>
+				<%= link_to_add_association "Add Step", f, :directions, class: "button is-info add-button" %>
 		</div>
 
 	</div>
 
 	<div class="field">
     <div class="control">
-      <%= f.button :submit, "Submit Recipe", class: "button is-info is-medium" %>
+    	<% if action_name == "new" %>
+      	<%= f.button :submit, "Submit Recipe", class: "button is-primary is-medium" %>
+      <% end %>
+      <% if action_name == "edit" %>
+      	<%= f.button :submit, "Update Recipe", class: "button is-primary is-medium" %>
+      <% end %>
     </div>
   </div>
 
