@@ -19,3 +19,7 @@
 .wrap-children {
 	flex-wrap: wrap;
 }
+
+.notification:not(:last-child) {
+	margin-bottom: 0;
+}
