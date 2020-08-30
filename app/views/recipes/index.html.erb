@@ -1,7 +1,15 @@
-<h1>Minke.XYZ</h1>
+<div class="container is-fluid">
+	<div class="tile is-ancestor wrap-children">
 
-<ul>
-	<% @recipe.each do |recipe| %>
-		<li><%= link_to recipe.title, recipe %> </li>
-	<% end %>
-</ul>
+		<% @recipe.each do |recipe| %>
+			<div class="tile is-parent is-4">
+				<article class="tile is-child box">
+					<p class="title"> <%= recipe.title %> </p>
+					<p class="subtitle"> <%= recipe.description %> </p>
+					<%= link_to "View Recipe", recipe, class: "button is-info" %>
+				</article>
+			</div>
+		<% end %>
+
+	</div>
+</div>

@@ -10,7 +10,74 @@
     <%= javascript_include_tag  'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="has-navbar-fixed-top">
+
+    <nav class="navbar is-transparent is-fixed-top">
+      <div class="navbar-brand">
+        <%= link_to root_path, class: "navbar-item" do %>
+          <h1 class="title is-5">Minke.XYZ</h1>
+        <% end %>
+        <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <% if action_name == "index" %>
+        <div class="navbar-start">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" href="#">
+              Recipe Filter
+            </a>
+            <div class="navbar-dropdown is-boxed">
+              <a class="navbar-item" href="#">
+                Breakfast
+              </a>
+              <a class="navbar-item" href="#">
+                Appetizer
+              </a>
+              <a class="navbar-item" href="#">
+                Snack
+              </a>
+              <a class="navbar-item" href="#">
+                Dinner
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item" href="#">
+                Bread
+              </a>
+              <a class="navbar-item" href="#">
+                Smoothie
+              </a>
+              <a class="navbar-item" href="#">
+                Soup
+              </a>
+            </div>
+          </div>
+        </div>
+        <% end %>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <% if action_name == "index" %>
+              <p class="control">
+                <input class="input" type="text" placeholder="Find a recipe...">
+              </p>
+              <% end %>
+              <p class="control">
+                <%= link_to "New Recipe", new_recipe_path, class: "button is-primary" %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </nav>
+
     <%= yield %>
+
   </body>
 </html>
