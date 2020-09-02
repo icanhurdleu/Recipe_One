@@ -1,3 +1,48 @@
 // Place all the styles related to the recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.recipe-directions {
+	margin-left: 20px;
+}
+
+.recipe_ingredients_name label {
+	display: none;
+}
+.recipe_directions_step label {
+	display: none;
+}
+
+.nested-fields {
+	margin-top: 10px;
+}
+
+.add-button {
+	margin-top: 15px;
+}
+
+.nested-fields > .input {
+	border: none;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.nested-fields > div > .input {
+	border: none;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.remove-left-radii {
+	border-radius: 0px 4px 4px 0px !important;
+}
+
+.remove-right-radii {
+	border-radius: 4px 0px 0px 4px !important;
+	border-right: none;
+}
+
+.x-button {
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+}

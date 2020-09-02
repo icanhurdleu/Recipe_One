@@ -2,12 +2,11 @@
 	<div class="container is-fluid">
 		<div class="tile is-ancestor wrap-children">
 
-			<% @recipe.each do |recipe| %>
+			<% @tag.each do |tag| %>
 				<div class="tile is-parent is-4 recipe-holder">
 					<article class="tile is-child box">
-						<p class="title"> <%= recipe.title %> </p>
-						<p class="subtitle"> <%= recipe.description %> </p>
-						<%= link_to "View Recipe", recipe, class: "button is-info" %>
+						<p class="title"> <%= tag.name %> </p>
+						<%= link_to "View Tag", tag, class: "button is-info" %>
 					</article>
 				</div>
 			<% end %>

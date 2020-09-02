@@ -1,4 +1,4 @@
-jQuery(document).ready(function() {
+jQuery(document).on( "turbolinks:load", function() {
 	// setTimeout(function(){
 	// 	$('#flash-notice').remove();
 	// }, 5000);

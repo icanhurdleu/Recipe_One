@@ -72,7 +72,7 @@
 	</div>
 
 	<div class="columns">
-		<div class="column">
+		<div class="column is-one-third">
 			<h3>Ingredients</h3>
 			<div class="field">
 				<div class="control">
@@ -84,12 +84,16 @@
 			</div>
 		</div>
 
-		<div class="column">
+		<div class="column is-two-thirds">
 			<h3>Directions</h3>
-				<%= f.simple_fields_for :directions do |direction| %>
-					<%= render 'direction_fields', f: direction %>
-				<% end %>
-				<%= link_to_add_association "Add Step", f, :directions, class: "button is-info add-button" %>
+			<div class="field">
+				<div class="control">
+					<%= f.simple_fields_for :directions do |direction| %>
+						<%= render 'direction_fields', f: direction %>
+					<% end %>
+					<%= link_to_add_association "Add Step", f, :directions, class: "button is-info add-button" %>
+				</div>
+			</div>
 		</div>
 
 	</div>

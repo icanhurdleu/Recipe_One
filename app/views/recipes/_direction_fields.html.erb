@@ -1,13 +1,6 @@
-<div class="field has-addons">
-	<p class="control is-expanded">
-		<%= f.input :step, input_html: { class: "input", placeholder: "Directions..." } %>
-	</p>
-	<p class="control is-expanded">
-		<%= link_to_remove_association "Remove", f, class: "button" %>
-	</p>
+<div class="nested-fields">
+	<div class="field has-addons">
+		<%= f.input :step, input_html: { class: "input remove-right-radii", placeholder: "Directions..." } %>
+		<%= link_to_remove_association "X", f, class: "button is-danger remove-left-radii x-button" %>
+	</div>
 </div>
-
-<!-- <div class="nested-fields">
-	<%= f.input :step, input_html: { class: "input" } %>
-	<%= link_to_remove_association "Remove", f, class: "button is-info" %>
-</div> -->

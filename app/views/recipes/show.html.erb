@@ -1,41 +1,54 @@
-<div class="container is-fluid">
-	<div class="tile is-ancestor">
+<section class="hero is-primary is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        <%= @recipe.title %>
+      </h1>
+      <h2 class="subtitle">
+        <%= @recipe.description %>
+      </h2>
+    </div>
+  </div>
+</section>
 
-		<div class="tile is-4 is-vertical is-parent">
-			<div class="tile is-child box">
-				<p>Serves: <%= @recipe.serves %> </p>
-				<p>Prep Time: <%= @recipe.prep %> </p>
-				<p>Wait Time: <%= @recipe.wait %> </p>
+<section class="section">
+	<div class="container is-desktop">
+		<div class="tile is-ancestor">
+
+			<div class="tile is-4 is-vertical is-parent">
+				<div class="tile is-child box">
+					<p>Serves: <strong><%= @recipe.serves %></strong> </p>
+					<p>Prep Time: <strong><%= @recipe.prep %></strong> </p>
+					<p>Wait Time: <strong><%= @recipe.wait %></strong> </p>
+				</div>
+				<div class="tile is-child box">
+					<p class="title">Ingredients</p>
+					<ul>
+						<% @recipe.ingredients.each do |ingredient| %>
+							<li> <%= ingredient.name %> </li>
+						<% end %>
+					</ul>
+				</div>
 			</div>
-			<div class="tile is-child box">
-				<p class="title">Ingredients</p>
-				<ul>
-					<% @recipe.ingredients.each do |ingredient| %>
-						<li> <%= ingredient.name %> </li>
-					<% end %>
-				</ul>
+
+			<div class="tile is-parent">
+				<div class="tile is-child box">
+					<p class="title">Directions</p>
+					<ol class="recipe-directions">
+						<% @recipe.directions.each do |direction| %>
+							<li> <%= direction.step %> </li>
+						<% end %>
+					</ol>
+				</div>
 			</div>
+
 		</div>
 
-		<div class="tile is-vertical is-parent">
-			<div class="tile is-child">
-				<p class="title"> <%= @recipe.title %></p>
-				<div class="buttons are-small">
-					<% @recipe.tags.each do |tag| %>
-						<%= link_to tag.name, tag_path(tag), class: "button" %>
-					<% end %>
-				</div>
-				<p> <%= @recipe.description %></p>
-			</div>
-			<div class="tile is-child box">
-				<p class="title">Directions</p>
-				<ol>
-					<% @recipe.directions.each do |direction| %>
-						<li> <%= direction.step %> </li>
-					<% end %>
-				</ol>
-			</div>
+		<div class="buttons are-small">
+			<% @recipe.tags.each do |tag| %>
+				<%= link_to tag.name, tag_path(tag), class: "button" %>
+			<% end %>
 		</div>
 
 	</div>
-</div>
+</section>
