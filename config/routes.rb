@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   resources :recipes
 
-  resources :tags
+  resources :tags, only: [:index, :show, :destroy]
 end

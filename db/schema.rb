@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_30_232939) do
+ActiveRecord::Schema.define(version: 2020_09_02_234638) do
 
   create_table "directions", force: :cascade do |t|
     t.text "step"
@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 2020_08_30_232939) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_tags_on_slug", unique: true
   end
 
 end

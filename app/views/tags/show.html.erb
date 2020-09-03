@@ -1,0 +1,27 @@
+<section class="hero is-primary is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        <%= @tag.name.capitalize.pluralize %>
+      </h1>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+	<div class="container is-fluid">
+		<div class="tile is-ancestor wrap-children">
+
+			<% @tag.recipes.each do |recipe| %>
+				<div class="tile is-parent is-4 recipe-holder">
+					<article class="tile is-child box">
+						<p class="title"> <%= recipe.title %> </p>
+						<p class="subtitle"> <%= recipe.description %> </p>
+						<%= link_to "View Recipe", recipe, class: "button is-info" %>
+					</article>
+				</div>
+			<% end %>
+
+		</div>
+	</div>
+</section>
