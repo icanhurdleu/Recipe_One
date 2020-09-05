@@ -31,6 +31,20 @@
 	margin-left: 20px;
 }
 
+.recipe-directions li {
+	margin-bottom: 5px;
+}
+.recipe-directions:not(:last-child) {
+	margin-bottom: 0px;
+}
+
+.recipe-ingredients li {
+	margin-bottom: 5px;
+}
+.recipe-ingredients:not(:last-child) {
+	margin-bottom: 0px;
+}
+
 .recipe_ingredients_name label {
 	display: none;
 }

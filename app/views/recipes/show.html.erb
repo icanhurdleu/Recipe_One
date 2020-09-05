@@ -23,7 +23,7 @@
 				</div>
 				<div class="tile is-child box">
 					<p class="title"><i class="fa fa-list"></i>&nbsp;&nbsp;Ingredients</p>
-					<ul>
+					<ul class="recipe-ingredients">
 						<% @recipe.ingredients.each do |ingredient| %>
 							<li> <%= ingredient.name %> </li>
 						<% end %>
