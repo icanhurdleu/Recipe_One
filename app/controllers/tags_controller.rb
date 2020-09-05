@@ -3,7 +3,7 @@ class TagsController < ApplicationController
 	before_action :verify_empty, only: :destroy
 
 	def index
-		@tag = Tag.all.order("name DESC")
+		@tag = Tag.all.order("name ASC")
 	end
 
 	def show

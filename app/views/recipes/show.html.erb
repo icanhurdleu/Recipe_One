@@ -17,12 +17,12 @@
 
 			<div class="tile is-4 is-vertical is-parent">
 				<div class="tile is-child box">
-					<p>Serves: <strong><%= @recipe.serves %></strong> </p>
-					<p>Prep Time: <strong><%= @recipe.prep %></strong> </p>
-					<p>Wait Time: <strong><%= @recipe.wait %></strong> </p>
+					<p><i class="fa fa-users add-margin-right"></i>Serves: <strong><%= @recipe.serves %></strong> </p>
+					<p><i class="fa fa-clock-o add-margin-right"></i>Prep Time: <strong><%= @recipe.prep %></strong> </p>
+					<p><i class="fa fa-clock-o add-margin-right"></i>Wait Time: <strong><%= @recipe.wait %></strong> </p>
 				</div>
 				<div class="tile is-child box">
-					<p class="title">Ingredients</p>
+					<p class="title"><i class="fa fa-list"></i>&nbsp;&nbsp;Ingredients</p>
 					<ul>
 						<% @recipe.ingredients.each do |ingredient| %>
 							<li> <%= ingredient.name %> </li>
@@ -33,7 +33,7 @@
 
 			<div class="tile is-parent">
 				<div class="tile is-child box">
-					<p class="title">Directions</p>
+					<p class="title"><i class="fa fa-list-ol"></i>&nbsp;&nbsp;Directions</p>
 					<ol class="recipe-directions">
 						<% @recipe.directions.each do |direction| %>
 							<li> <%= direction.step %> </li>

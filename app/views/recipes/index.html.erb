@@ -4,10 +4,17 @@
 
 			<% @recipe.each do |recipe| %>
 				<div class="tile is-parent is-4 recipe-holder">
-					<article class="tile is-child box">
-						<p class="title"> <%= recipe.title %> </p>
-						<p class="subtitle"> <%= recipe.description %> </p>
-						<%= link_to "View Recipe", recipe, class: "button is-info" %>
+					<article class="tile is-child box recipe-box">
+						<p class="title">
+							<%= link_to recipe.title, recipe, class: "recipe-link-title" %>
+						</p>
+						<!-- <p class="title"> <%= recipe.title %> </p> -->
+						<div class="recipe-summary-body">
+							<p class="recipe-snippet"><i class="fa fa-users add-margin-right"></i>Serves: <strong><%= recipe.serves %></strong> </p>
+							<p class="recipe-snippet"><i class="fa fa-clock-o add-margin-right"></i>Prep Time: <strong><%= recipe.prep %></strong> </p>
+							<p class="recipe-snippet"><i class="fa fa-clock-o add-margin-right"></i>Wait Time: <strong><%= recipe.wait %></strong> </p>
+							<p class="subtitle recipe-description"> <%= recipe.description %> </p>
+						</div>
 					</article>
 				</div>
 			<% end %>

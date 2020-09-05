@@ -2,6 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.recipe-box {
+	padding: 0px !important;
+}
+
+.recipe-box .title {
+	background-color: hsl(171, 100%, 41%);
+	padding: 1.10rem;
+	border-radius: 6px 6px 0 0;
+}
+
+.recipe-link-title {
+	transition: color 0.2s ease;
+	color: #fff;
+}
+
+.recipe-summary-body {
+	padding-left: 1.15rem;
+	padding-right: 1.15rem;
+	padding-bottom: 1.15rem;
+}
+
+.recipe-description {
+	padding-top: 1.10rem;
+}
+
 .recipe-directions {
 	margin-left: 20px;
 }
@@ -45,4 +70,8 @@
 .x-button {
 	padding-left: 10px !important;
 	padding-right: 10px !important;
+}
+
+.add-margin-right {
+	margin-right: 0.5rem;
 }

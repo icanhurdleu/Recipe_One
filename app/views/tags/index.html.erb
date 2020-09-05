@@ -5,8 +5,9 @@
 			<% @tag.each do |tag| %>
 				<div class="tile is-parent is-4 recipe-holder">
 					<article class="tile is-child box">
-						<p class="title"> <%= tag.name %> </p>
-						<%= link_to "View Tag", tag, class: "button is-info" %>
+						<p class="title"> <%= tag.name.capitalize.pluralize %> </p>
+						<p class="subtitle">Total Recipes: <strong><%= tag.recipes.count %></strong> </p>
+						<%= link_to "View Tag", tag, class: "button is-primary" %>
 					</article>
 				</div>
 			<% end %>

@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
 	before_action :find_recipe, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@recipe = Recipe.all.order("title DESC")
+		@recipe = Recipe.all.order("title ASC")
 	end
 
 	def show
