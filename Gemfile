@@ -38,6 +38,7 @@ gem 'simple_form', '~> 5.0', '>= 5.0.2'
 gem 'cocoon', '~> 1.2', '>= 1.2.14'
 gem 'friendly_id', '~> 5.4.0'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
+gem 'new_google_recaptcha', '~> 1.2'
 
 gem 'jquery-rails', '~> 4.4'
 
