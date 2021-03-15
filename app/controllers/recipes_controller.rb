@@ -16,26 +16,12 @@ class RecipesController < ApplicationController
 	def create
 		@recipe = Recipe.new(recipe_params)
 
-		if NewGoogleRecaptcha.human?(
-			params[:new_google_recaptcha_token],
-			"checkout",
-			NewGoogleRecaptcha.minimum_score,
-			@recipe) && @recipe.save
+		if NewGoogleRecaptcha.human?(params[:new_google_recaptcha_token], "checkout") && (@recipe.save)
 			redirect_to @recipe, notice: "Successfully created new recipe"
 		else
 			render 'new'
 		end
 	end
-
-	# def create
-	# 	@recipe = Recipe.new(recipe_params)
-
-	# 	if @recipe.save
-	# 		redirect_to @recipe, notice: "Successfully created new recipe"
-	# 	else
-	# 		render 'new'
-	# 	end
-	# end
 
 	def edit
 	end
